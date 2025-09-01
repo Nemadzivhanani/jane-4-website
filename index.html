@@ -3,31 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JANE 4</title>
+  <title>Jane 4 Streetwear</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="header">
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" id="hamburger">&#9776;</div>
     <div class="logo">JANE 4</div>
-    <div class="cart">🛒</div>
+    <div class="cart">
+      <!-- minimalist cart icon (SVG inline) -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="20" cy="21" r="1"/>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+      </svg>
+    </div>
   </header>
 
-  <!-- NAV MENU -->
-  <nav id="mobileMenu" class="mobile-menu">
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu">
     <a href="#">Home</a>
     <a href="#">Shop</a>
     <a href="#">About</a>
     <a href="#">Contact</a>
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- Hero Banner -->
   <section class="hero">
-    <img src="img/hero.jpg" alt="Hero Banner">
+    <img src="hero.jpg" alt="Hero Banner" />
   </section>
 
-  <!-- CATEGORIES -->
+  <!-- Categories -->
   <section class="categories">
     <div class="category">Category 1</div>
     <div class="category">Category 2</div>
@@ -35,21 +42,13 @@
     <div class="category">Category 4</div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    <div class="about">
-      <h3>About Us</h3>
-      <p>Jane 4 Streetwear is all about bold style, confidence, and street culture.</p>
-    </div>
-    <div class="contact">
-      <h3>Contact Us</h3>
-      <p>Email: info@jane4.com</p>
-      <p>WhatsApp: +27 123 456 789</p>
-      <div class="socials">
-        <a href="#">📷 Instagram</a>
-        <a href="#">📘 Facebook</a>
-        <a href="#">💬 WhatsApp</a>
-      </div>
+    <p>Contact us: info@jane4.com</p>
+    <div class="socials">
+      <a href="#">Instagram</a> |
+      <a href="#">WhatsApp</a> |
+      <a href="#">Facebook</a>
     </div>
   </footer>
 
