@@ -8,27 +8,23 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header id="main-header">
-    <div class="nav-left">
-      <button class="menu-toggle" id="menu-btn">☰</button>
-    </div>
-    <div class="nav-center">
-      <h1 class="logo">JANE 4</h1>
-    </div>
-    <div class="nav-right">
-      <a href="#" class="cart">C</a>
-    </div>
-    <nav class="dropdown" id="dropdown-menu">
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
+  <header class="header">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="logo">JANE 4</div>
+    <div class="cart">🛒</div>
   </header>
 
-  <!-- HERO IMAGE -->
+  <!-- NAV MENU -->
+  <nav id="mobileMenu" class="mobile-menu">
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
   <section class="hero">
-    <img src="your-hero-image.jpg" alt="Hero Banner">
+    <img src="img/hero.jpg" alt="Hero Banner">
   </section>
 
   <!-- CATEGORIES -->
@@ -41,10 +37,19 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>Contact us at: info@jane4.com</p>
-    <div class="social-links">
-      <a href="https://instagram.com/" target="_blank">Instagram</a> | 
-      <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+    <div class="about">
+      <h3>About Us</h3>
+      <p>Jane 4 Streetwear is all about bold style, confidence, and street culture.</p>
+    </div>
+    <div class="contact">
+      <h3>Contact Us</h3>
+      <p>Email: info@jane4.com</p>
+      <p>WhatsApp: +27 123 456 789</p>
+      <div class="socials">
+        <a href="#">📷 Instagram</a>
+        <a href="#">📘 Facebook</a>
+        <a href="#">💬 WhatsApp</a>
+      </div>
     </div>
   </footer>
 
