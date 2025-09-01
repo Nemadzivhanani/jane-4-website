@@ -1,21 +1,11 @@
-// MENU TOGGLE
-const menuBtn = document.getElementById("menu-btn");
-const dropdown = document.getElementById("dropdown-menu");
+// Toggle Menu
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("show");
+}
 
-menuBtn.addEventListener("click", () => {
-  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
-});
-
-// CLOSE MENU WHEN CLICKING A LINK
-dropdown.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click", () => {
-    dropdown.style.display = "none";
-  });
-});
-
-// CHANGE HEADER ON SCROLL
+// Change header on scroll
 window.addEventListener("scroll", () => {
-  const header = document.getElementById("main-header");
+  const header = document.querySelector(".header");
   if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
