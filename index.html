@@ -4,91 +4,275 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jane4 Streetwear</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      z-index: 1000;
+    }
+
+    header .logo {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+
+    /* CART */
+    .cart {
+      position: relative;
+    }
+
+    .cart .cart-badge {
+      position: absolute;
+      top: -8px;
+      right: -10px;
+      background: red;
+      color: #fff;
+      font-size: 0.7em;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 3px 6px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      height: 100vh;
+      background: url('images/hero.jpg') center center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.2em;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .hero button {
+      padding: 12px 24px;
+      border: 2px solid #fff;
+      background: transparent;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* CATEGORIES */
+    .categories {
+      padding: 40px 20px;
+      background: #fff;
+    }
+
+    .categories h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.6em;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .category {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .category img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .category p {
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    /* ABOUT */
+    .about {
+      padding: 40px 20px;
+      background: #f2f2f2;
+      text-align: center;
+    }
+
+    .about h2 {
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* CONTACT */
+    .contact {
+      padding: 40px 20px;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1.5em;
+    }
+
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 15px;
+      text-align: center;
+      font-size: 0.9em;
+      background: #000;
+      color: #aaa;
+    }
+
+    /* MOBILE FIRST */
+    @media(min-width:768px){
+      .hero h1 {
+        font-size: 3em;
+      }
+      .category img {
+        height: 180px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- HEADER -->
- <header>
-  <div class="logo">JANE 4</div>
-  <nav id="navbar">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#categories">Categories</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li class="cart">
-        <a href="#">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="cart-badge">2</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
-  <div class="menu-toggle" id="menu-toggle">
-    <i class="fas fa-bars"></i>
-  </div>
-</header>
 
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Jane4</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="cart">
+          <a href="#"><i class="fas fa-shopping-cart"></i></a>
+          <span class="cart-badge">2</span>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- HERO -->
-  <section id="hero">
-    <div class="hero-text">
-      <h1>Streetwear. Redefined.</h1>
-      <p>Authentic Black & White Jane4 Style</p>
-      <a href="#categories" class="btn">Shop Now</a>
-    </div>
+  <section class="hero">
+    <h1>Jane4 Streetwear</h1>
+    <button>Shop Now</button>
   </section>
 
   <!-- CATEGORIES -->
-  <section id="categories">
-    <h2>Product Categories</h2>
-    <div class="grid">
-      <div class="card">
+  <section class="categories" id="categories">
+    <h2>Categories</h2>
+    <div class="category-grid">
+      <div class="category">
         <img src="images/hoodie.jpg" alt="Hoodies">
-        <h3>Hoodies & Sweaters</h3>
+        <p>Hoodies</p>
       </div>
-      <div class="card">
+      <div class="category">
         <img src="images/tshirt.jpg" alt="T-Shirts">
-        <h3>T-Shirts & Tops</h3>
+        <p>T-Shirts</p>
       </div>
-      <div class="card">
+      <div class="category">
         <img src="images/pants.jpg" alt="Pants">
-        <h3>Pants & Bottoms</h3>
+        <p>Pants</p>
       </div>
-      <div class="card">
-        <img src="images/caps.jpg" alt="Caps">
-        <h3>Caps & Accessories</h3>
+      <div class="category">
+        <img src="images/cap.jpg" alt="Caps">
+        <p>Caps</p>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about">
+  <section class="about" id="about">
     <h2>About Us</h2>
     <p>
-      Jane4 is more than clothing. It’s a lifestyle.  
-      We design authentic streetwear rooted in originality and culture.  
-      Black & White, bold and timeless.
+      Jane4 is a modern streetwear brand bringing bold, minimalistic fashion to everyday culture. 
+      Our collections are inspired by urban energy, made for people who live authentically.
     </p>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
+  <section class="contact" id="contact">
     <h2>Contact Us</h2>
-    <p>Email: support@jane4.me</p>
-    <p>Phone: +27 71 234 5678</p>
-    <p>WhatsApp: <a href="https://wa.me/27712345678">Chat Now</a></p>
-    <div class="socials">
+    <div class="social-links">
       <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:info@jane4.me"><i class="fas fa-envelope"></i></a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Jane4 Streetwear. All rights reserved.</p>
+    &copy; 2025 Jane4. All rights reserved.
   </footer>
+
 </body>
 </html>
