@@ -1,14 +1,21 @@
-// Toggle hamburger menu
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("mobile-menu");
+// MENU TOGGLE
+const menuBtn = document.getElementById("menu-btn");
+const dropdown = document.getElementById("dropdown-menu");
 
-hamburger.addEventListener("click", () => {
-  menu.classList.toggle("hidden");
+menuBtn.addEventListener("click", () => {
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
 });
 
-// Change header color on scroll
-const header = document.getElementById("main-header");
+// CLOSE MENU WHEN CLICKING A LINK
+dropdown.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    dropdown.style.display = "none";
+  });
+});
+
+// CHANGE HEADER ON SCROLL
 window.addEventListener("scroll", () => {
+  const header = document.getElementById("main-header");
   if (window.scrollY > 50) {
     header.classList.add("scrolled");
   } else {
