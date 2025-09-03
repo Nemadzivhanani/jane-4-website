@@ -13,7 +13,7 @@ header {
   z-index: 1000;
 }
 .logo { font-weight: bold; font-size: 1.4em; }
-.hamburger, .cart { font-size: 1.5em; cursor: pointer; }
+.hamburger i, .cart i { font-size: 1.5em; cursor: pointer; color: #111; }
 
 /* MOBILE MENU */
 .mobile-menu {
@@ -53,8 +53,9 @@ header {
 
 /* CONTACT */
 .contact { padding: 50px 20px; background: #111; color: #fff; text-align: center; }
-.social-links { display: flex; justify-content: center; gap: 20px; font-size: 1.8em; }
-.social-links a { color: #fff; text-decoration: none; }
+.social-links { display: flex; justify-content: center; gap: 25px; font-size: 1.6em; }
+.social-links a { color: #fff; transition: 0.2s; }
+.social-links a:hover { color: #999; }
 
 /* FOOTER */
 footer { background: #000; color: #aaa; text-align: center; padding: 15px; font-size: 0.9em; }
