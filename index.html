@@ -3,55 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jane 4 Streetwear</title>
+  <title>Jane4 Streetwear</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="hamburger" id="hamburger">&#9776;</div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="logo">JANE 4</div>
-    <div class="cart">
-      <!-- minimalist cart icon (SVG inline) -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="9" cy="21" r="1"/>
-        <circle cx="20" cy="21" r="1"/>
-        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-      </svg>
-    </div>
+    <div class="cart">🛒</div>
   </header>
 
-  <!-- Mobile Menu -->
-  <nav class="mobile-menu" id="mobileMenu">
+  <!-- MOBILE MENU -->
+  <nav id="mobileMenu" class="mobile-menu">
     <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <!-- Hero Banner -->
+  <!-- HERO -->
   <section class="hero">
-    <img src="hero.jpg" alt="Hero Banner" />
-  </section>
-
-  <!-- Categories -->
-  <section class="categories">
-    <div class="category">Category 1</div>
-    <div class="category">Category 2</div>
-    <div class="category">Category 3</div>
-    <div class="category">Category 4</div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>Contact us: info@jane4.com</p>
-    <div class="socials">
-      <a href="#">Instagram</a> |
-      <a href="#">WhatsApp</a> |
-      <a href="#">Facebook</a>
+    <div class="hero-text">
+      <h1>JANE 4 STREETWEAR</h1>
+      <p>Welcome to Greatness</p>
+      <a href="#categories" class="btn">Shop Now</a>
     </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categories">
+    <h2>Product Categories</h2>
+    <div class="category-grid">
+      <div class="category">
+        <img src="images/hoodie.jpg" alt="Hoodies">
+        <p>Hoodies & Sweaters</p>
+      </div>
+      <div class="category">
+        <img src="images/tshirt.jpg" alt="T-Shirts">
+        <p>T-Shirts & Tops</p>
+      </div>
+      <div class="category">
+        <img src="images/pants.jpg" alt="Pants">
+        <p>Pants</p>
+      </div>
+      <div class="category">
+        <img src="images/cap.jpg" alt="Caps">
+        <p>Caps</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>
+      Jane4 is a modern streetwear brand bringing bold, minimalistic fashion to everyday culture. 
+      Inspired by urban energy, we design collections for people who live authentically.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="social-links">
+      <a href="#"><span>📘</span></a>
+      <a href="#"><span>📸</span></a>
+      <a href="#"><span>✉️</span></a>
+      <a href="#"><span>💬</span></a>
+      <a href="#"><span>▶️</span></a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Jane4. All rights reserved.
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
+
