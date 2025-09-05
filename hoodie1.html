@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>“JANE4” Noun Hoodie - Jane4 Streetwear</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <div class="logo">JANE 4</div>
+    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+  </header>
+
+  <!-- PRODUCT -->
+  <section class="product-page">
+    <div class="product-gallery">
+      <img id="mainImage" src="images/hoodie1.jpg" alt="JANE4 Hoodie">
+      <div class="thumbnails">
+        <img src="images/hoodie1.jpg" onclick="changeImage(this)">
+        <img src="images/hoodie1_white.jpg" onclick="changeImage(this)">
+        <img src="images/hoodie1_red.jpg" onclick="changeImage(this)">
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h1>“JANE4” Noun Hoodie</h1>
+      <p class="price">R 400</p>
+
+      <div class="options">
+        <label>Size:</label>
+        <div class="size-options">
+          <button>XS</button><button>S</button><button>M</button>
+          <button>L</button><button>XL</button><button>2XL</button>
+        </div>
+      </div>
+
+      <div class="options">
+        <label>Color:</label>
+        <div class="color-options">
+          <button>Black</button><button>White</button><button>Red</button>
+        </div>
+      </div>
+
+      <a href="#" class="btn buy-btn">Add to Cart</a>
+    </div>
+  </section>
+
+</body>
+</html>
