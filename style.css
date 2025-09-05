@@ -146,20 +146,27 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; color: #111; background
   margin-bottom: 40px;
 }
 
+/* Grid layout for products */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
+/* Product card styling */
+.product-card {
+  text-align: center;
+}
+
+/* Images always square (1:1) */
 .product-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* force square shape */
-  object-fit: cover;     /* crop to fit nicely */
-  border-radius: 10px;   /* optional, for rounded corners */
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 8px;
 }
+
 
 
 .product-name {
