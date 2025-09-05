@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hoodies - Jane4 Streetwear</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -19,34 +17,25 @@
 
   <nav id="mobileMenu" class="mobile-menu">
     <a href="index.html">Home</a>
-    <a href="index.html#categories">Categories</a>
-    <a href="index.html#about">About Us</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="hoodies.html">Hoodies</a>
+    <a href="tshirts.html">T-Shirts</a>
+    <a href="caps.html">Caps</a>
   </nav>
 
-  <!-- HOODIES -->
-  <section class="category-page">
-    <h1>Hoodies & Sweaters</h1>
-    <div class="product-grid">
+  <!-- PRODUCTS GRID -->
+  <section class="products">
+    <div class="product-card" onclick="window.location.href='hoodie1.html'">
+      <img src="images/hoodie1.jpg" alt="JANE4 Noun Hoodie">
+      <h3>“JANE4” Noun Hoodie</h3>
+      <p class="price">R 400</p>
+    </div>
 
-      <div class="product">
-        <img src="images/hoodie1.jpg" alt="Hoodie 1">
-        <p>Classic Black Hoodie</p>
-      </div>
-
-      <div class="product">
-        <img src="images/hoodie2.jpg" alt="Hoodie 2">
-        <p>Logo Print Hoodie</p>
-      </div>
-
+    <div class="product-card" onclick="window.location.href='hoodie2.html'">
+      <img src="images/hoodie2.jpg" alt="Bear Hoodie">
+      <h3>Bear Hoodie</h3>
+      <p class="price">R 400</p>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Jane4. All rights reserved.
-  </footer>
-
 </body>
 </html>
-
