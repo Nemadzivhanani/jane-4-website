@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jane4 Streetwear</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <!-- Font Awesome (for minimalist icons) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>JANE 4</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+
+ <!-- Header -->
+  <header id="main-header">
     <div class="logo">JANE 4</div>
-    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <a href="#"><img src="search-icon.png" alt="Search"></a>
+      <a href="#"><img src="cart-icon.png" alt="Cart"></a>
+    </div>
   </header>
 
   <!-- MOBILE MENU -->
@@ -26,15 +34,17 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <!-- HERO -->
+ <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-text">
-      <h1>JANE 4 STREETWEAR</h1>
-      <p>Welcome to Greatness</p>
-      <a href="#categories" class="btn">Shop Now</a>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>EARTH COLLECTION</h1>
+      <p>Canvas | All Season</p>
+      <a href="#" class="btn">Shop Now</a>
     </div>
   </section>
 
+   <script src="script.js"></script>
   <!-- CATEGORIES -->
 
   <section class="categories" id="categories">
