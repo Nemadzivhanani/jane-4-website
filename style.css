@@ -121,3 +121,12 @@ body { font-family: "Helvetica Neue", Arial, sans-serif; color: #111; background
   .category-grid { grid-template-columns: repeat(4,1fr); gap: 18px; }
   .cta-frame { padding: 20px 48px; font-size: 16px; }
 }
+
+/* Remove grayscale so category & product images show in full color */
+.category-card img,
+.product-card img,
+.product-gallery img,
+.thumbnails img {
+  filter: none !important;
+}
+
