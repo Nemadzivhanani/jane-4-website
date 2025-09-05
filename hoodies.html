@@ -1,66 +1,115 @@
+<!-- hoodies.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoodies | Jane 4</title>
+  <title>Hoodies & Sweaters - Jane4 Streetwear</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Header (same as main page) -->
+  <!-- HEADER (same as homepage) -->
   <header>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
     <div class="logo">JANE 4</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="hoodies.html" class="active">Hoodies</a></li>
-        <li><a href="tshirts.html">T-Shirts</a></li>
-        <li><a href="pants.html">Pants</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-    </nav>
+    <div class="cart"><i class="fas fa-shopping-cart"></i></div>
   </header>
 
-  <!-- Hoodies Section -->
-  <section class="product-section">
-    <h1 class="section-title">Hoodies</h1>
+  <!-- MOBILE MENU -->
+  <nav id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="index.html#categories">Categories</a>
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+
+  <!-- HOODIES & SWEATERS SECTION -->
+  <section class="category-page">
+    <h1>Hoodies & Sweaters</h1>
     <div class="product-grid">
 
-      <!-- Product Card -->
+      <!-- Hoodies -->
       <div class="product-card">
-        <img src="images/hoodies/cash-crunch.jpg" alt="Cash Crunch Hoodie">
-        <h3 class="product-name">CASH CRUNCH HOODIE</h3>
-        <p class="product-price">R 480.00 ZAR</p>
+        <img src="images/hoodies1.jpg" alt="Essential Hoodie">
+        <h3>Essential Hoodie</h3>
+        <p class="price">R350</p>
       </div>
 
       <div class="product-card">
-        <img src="images/hoodies/one-day-sopopa.jpg" alt="One Day Sopopa Hoodie">
-        <h3 class="product-name">ONE DAY SOPOPA HOODIE</h3>
-        <p class="product-price">R 480.00 ZAR</p>
+        <img src="images/hoodies2.jpg" alt="HND Hoodie">
+        <h3>HND Hoodie</h3>
+        <p class="price">R380</p>
       </div>
 
       <div class="product-card">
-        <img src="images/hoodies/fake-smile.jpg" alt="Fake Smile Hoodie">
-        <h3 class="product-name">FAKE SMILE HOODIE</h3>
-        <p class="product-price">R 380.00 ZAR</p>
+        <img src="images/hoodies3.jpg" alt="Graffiti Style Hoodie">
+        <h3>Graffiti Style</h3>
+        <p class="price">R380</p>
       </div>
 
       <div class="product-card">
-        <img src="images/hoodies/simpsons.jpg" alt="Simpsons Sweater">
-        <h3 class="product-name">SIMPSONS SWEATER</h3>
-        <p class="product-price">R 320.00 ZAR</p>
+        <img src="images/hoodies4.jpg" alt="Street Hoodie">
+        <h3>Street Hoodie</h3>
+        <p class="price">R400</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images/hoodies5.jpg" alt="Jane4 Noun Hoodie">
+        <h3>JANE 4 Noun</h3>
+        <p class="price">R400</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images/hoodies6.jpg" alt="Bear Hoodie">
+        <h3>Bear</h3>
+        <p class="price">R380</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images/hoodies7.jpg" alt="Tragedy & Comedy Hoodie">
+        <h3>Tragedy & Comedy</h3>
+        <p class="price">R400</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images/hoodies8.jpg" alt="Roll It Hoodie">
+        <h3>Roll iT</h3>
+        <p class="price">R400</p>
+      </div>
+
+      <!-- Sweaters -->
+      <div class="product-card">
+        <img src="images/sweater1.jpg" alt="MANKIND Sweater">
+        <h3>MANKIND</h3>
+        <p class="price">R350</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images/sweater2.jpg" alt="HND Sweater">
+        <h3>HND</h3>
+        <p class="price">R330</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images/sweater3.jpg" alt="HND V2 Sweater">
+        <h3>HND V2</h3>
+        <p class="price">R350</p>
+      </div>
+
+      <div class="product-card">
+        <img src="images/sweater4.jpg" alt="GURU Sweater">
+        <h3>GURU</h3>
+        <p class="price">R330</p>
       </div>
 
     </div>
   </section>
 
-  <!-- Footer (same as main page) -->
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Jane 4. All rights reserved.</p>
-    <a href="https://jane4.me" target="_blank">jane4.me</a>
+    &copy; 2025 Jane4. All rights reserved.
   </footer>
 
 </body>
 </html>
-
