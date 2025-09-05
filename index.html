@@ -1,105 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JANE 4</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JANE 4 STREETWEAR</title>
+
+  <!-- Font Awesome (optional) for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- Thin top info bar (optional, like the example) -->
+  <div class="top-bar">
+    <div class="top-inner">CAPITEC PAY &nbsp;|&nbsp; APPLE PAY &nbsp;|&nbsp; GOOGLE PAY</div>
+  </div>
 
- <!-- Header -->
-  <header id="main-header">
+  <!-- Header -->
+  <header id="site-header" class="transparent">
+    <button id="hamburger" class="hamburger" aria-label="Open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
     <div class="logo">JANE 4</div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="icons">
-      <a href="#"><img src="search-icon.png" alt="Search"></a>
-      <a href="#"><img src="cart-icon.png" alt="Cart"></a>
+
+    <div class="header-icons">
+      <button class="icon-btn" aria-label="Location"><i class="fas fa-map-marker-alt"></i></button>
+      <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+      <a class="icon-btn cart" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cart-count">0</span></a>
     </div>
   </header>
 
-  <!-- MOBILE MENU -->
-  <nav id="mobileMenu" class="mobile-menu">
-    <a href="#">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#about">About Us</a>
-    <a href="#contact">Contact</a>
+  <!-- Mobile nav -->
+  <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
+    <a href="#" class="nav-link">Home</a>
+    <a href="#categories" class="nav-link">Collections</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
- <!-- Hero Section -->
-  <section class="hero">
-    <div class="overlay"></div>
+  <!-- HERO -->
+  <section class="hero" role="banner">
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
-      <h1>EARTH COLLECTION</h1>
-      <p>Canvas | All Season</p>
-      <a href="#" class="btn">Shop Now</a>
+      <!-- center logo in hero if you want (we keep top-centered logo in header) -->
+      <div class="hero-cta-frame">
+        <a href="#categories" class="cta-frame">SHOP SCORPION KINGS</a>
+      </div>
+    </div>
+
+    <!-- circular scroll indicator -->
+    <div class="scroll-circle" aria-hidden="true">
+      <i class="fas fa-chevron-down"></i>
     </div>
   </section>
 
-   <script src="script.js"></script>
-  <!-- CATEGORIES -->
-
-  <section class="categories" id="categories">
-  <h2>Product Categories</h2>
-  <div class="category-grid">
-
-    <a href="hoodies.html" class="category">
-      <img src="images/hoodie.jpg" alt="Hoodies">
-      <p>Hoodies & Sweaters</p>
-    </a>
-
-    <a href="tshirts.html" class="category">
-      <img src="images/tshirt.jpg" alt="T-Shirts">
-      <p>T-Shirts & Tops</p>
-    </a>
-
-    <a href="pants.html" class="category">
-      <img src="images/pants.jpg" alt="Pants">
-      <p>Pants</p>
-    </a>
-
-    <a href="caps.html" class="category">
-      <img src="images/cap.jpg" alt="Caps">
-      <p>Caps</p>
-    </a>
-
-  </div>
-</section>
-
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>
-      Jane4 is a modern streetwear brand bringing bold, minimalistic fashion to everyday culture. 
-      Inspired by urban energy, we design collections for people who live authentically.
-    </p>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <div class="social-links">
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:info@jane4.com"><i class="fas fa-envelope"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
+  <!-- White area that follows hero like the example -->
+  <section class="intro">
+    <div class="intro-inner">
+      <div class="eyebrow">CANVAS | ALL-SEASON</div>
+      <h1 class="big-title">EARTH COLLECTION</h1>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
-    &copy; 2025 Jane4. All rights reserved.
-  </footer>
+  <!-- categories (two per row on mobile) -->
+  <section id="categories" class="categories">
+    <h2>Product Categories</h2>
 
+    <div class="category-grid">
+      <a class="category-card" href="hoodies.html">
+        <img src="images/hoodie.jpg" alt="Hoodies">
+        <div class="cat-title">Hoodies</div>
+      </a>
+
+      <a class="category-card" href="tshirts.html">
+        <img src="images/tshirt.jpg" alt="T-Shirts">
+        <div class="cat-title">T-Shirts</div>
+      </a>
+
+      <a class="category-card" href="pants.html">
+        <img src="images/pants.jpg" alt="Pants">
+        <div class="cat-title">Pants</div>
+      </a>
+
+      <a class="category-card" href="caps.html">
+        <img src="images/cap.jpg" alt="Caps">
+        <div class="cat-title">Caps</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <h3>About Us</h3>
+    <p>Jane4 is a modern streetwear brand creating minimal, durable pieces for everyday style.</p>
+  </section>
+
+  <!-- Contact / Social -->
+  <section id="contact" class="contact">
+    <h3>Contact</h3>
+    <div class="socials">
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:info@jane4.me" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+
+  <footer class="site-footer">&copy; 2025 JANE 4</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
