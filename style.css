@@ -1,19 +1,64 @@
-/* RESET */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: Arial, sans-serif; background: #fff; color: #111; }
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* HEADER */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+
+/* Header */
 header {
   position: fixed;
-  top: 0; left: 0; width: 100%;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 15px 20px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(6px);
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease, padding 0.3s ease;
   z-index: 1000;
 }
-.logo { font-weight: bold; font-size: 1.4em; }
-.hamburger i, .cart i { font-size: 1.5em; cursor: pointer; color: #111; }
+
+header.transparent {
+  background: transparent;
+  color: white;
+}
+
+header.solid {
+  background: white;
+  color: black;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header.transparent nav ul li a {
+  color: white;
+}
+
+header.solid nav ul li a {
+  color: black;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
 
 /* MOBILE MENU */
 .mobile-menu {
@@ -25,18 +70,55 @@ header {
   padding: 15px; text-decoration: none; color: #fff; border-bottom: 1px solid #333;
 }
 
-/* HERO */
+/* Hero Section */
 .hero {
-  height: 90vh;
-  background: url("images/hero.jpg") center/cover no-repeat;
-  display: flex; justify-content: center; align-items: center; text-align: center;
-  color: #fff; padding: 20px;
+  height: 100vh;
+  background: url('your-hero-image.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
-.hero h1 { font-size: 2.2em; margin-bottom: 10px; }
-.hero .btn {
-  display: inline-block; margin-top: 15px;
-  padding: 10px 20px; border: 2px solid #fff; border-radius: 30px;
-  background: transparent; color: #fff; text-decoration: none;
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.btn {
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: black;
+  color: white;
 }
 
 /* CATEGORIES */
