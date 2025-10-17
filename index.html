@@ -1,113 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>JANE 4 STREETWEAR</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JANE 4 | Streetwear</title>
 
-  <!-- Font Awesome (optional) for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <header id="site-header">
+        <button id="hamburger-btn" class="hamburger" aria-label="Open Menu">
+            <i class="fas fa-bars"></i>
+        </button>
 
-  <!-- Header -->
-  <header id="site-header" class="transparent">
-    <button id="hamburger" class="hamburger" aria-label="Open menu">
-      <i class="fas fa-bars"></i>
-    </button>
+        <div class="logo">JANE 4</div>
 
-    <div class="logo">JANE 4</div>
+        <a href="#" class="cart" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge">0</span>
+        </a>
+    </header>
 
-    <div class="header-icons">
-      <button class="icon-btn" aria-label="Location"><i class="fas fa-map-marker-alt"></i></button>
-      <button class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
-      <a class="icon-btn cart" href="cart.html" aria-label="Cart"><i class="fas fa-shopping-bag"></i><span class="cart-badge" id="cart-count">0</span></a>
-    </div>
-  </header>
+    <nav id="mobile-nav" class="mobile-nav">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#categories" class="nav-link">Collections</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
 
-  <!-- Mobile nav -->
-  <nav id="mobile-nav" class="mobile-nav" aria-hidden="true">
-    <a href="#" class="nav-link">Home</a>
-    <a href="#categories" class="nav-link">Collections</a>
-    <a href="#about" class="nav-link">About</a>
-    <a href="#contact" class="nav-link">Contact</a>
-  </nav>
+    <section id="hero" class="hero" role="banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-cta-frame">
+                <a href="#categories" class="cta-link">SHOP THE COLLECTION</a>
+            </div>
+        </div>
+        <div class="scroll-circle" aria-hidden="true">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-  <!-- HERO -->
-  <section class="hero" role="banner">
-    <div class="hero-overlay"></div>
+    <section class="intro">
+        <div class="intro-inner">
+            <div class="eyebrow">MINIMAL | AUTHENTIC | URBAN</div>
+            <h1 class="big-title">JANE 4 COLLECTIONS</h1>
+        </div>
+    </section>
 
-    <div class="hero-content">
-      <!-- center logo in hero if you want (we keep top-centered logo in header) -->
-      <div class="hero-cta-frame">
-        <a href="#categories" class="cta-frame">SHOP JANE 4</a>
-      </div>
-    </div>
+    <section id="categories" class="categories">
+        <h2>Product Categories</h2>
+        <div class="category-grid">
+            <a class="category-card" href="hoodies.html">
+                <img src="images/hoodie.jpg" alt="Hoodies">
+                <div class="cat-title">Hoodies</div>
+            </a>
+            <a class="category-card" href="tshirts.html">
+                <img src="images/tshirt.jpg" alt="T-Shirts">
+                <div class="cat-title">T-Shirts</div>
+            </a>
+            <a class="category-card" href="pants.html">
+                <img src="images/pants.jpg" alt="Pants">
+                <div class="cat-title">Pants</div>
+            </a>
+            <a class="category-card" href="caps.html">
+                <img src="images/cap.jpg" alt="Caps">
+                <div class="cat-title">Caps</div>
+            </a>
+        </div>
+    </section>
 
-    <!-- circular scroll indicator -->
-    <div class="scroll-circle" aria-hidden="true">
-      <i class="fas fa-chevron-down"></i>
-    </div>
-  </section>
+    <section id="about" class="about">
+        <h3>About JANE 4</h3>
+        <p>JANE 4 is a South African streetwear brand creating bold, minimal, and quality designs. Inspired by urban energy, our collections are built for the modern individual.</p>
+    </section>
 
-  <!-- White area that follows hero like the example -->
-  <section class="intro">
-    <div class="intro-inner">
-      <div class="eyebrow">SHOP | COLLECTIONS</div>
-      <h1 class="big-title">STREETWEAR COLLECTIONS</h1>
-    </div>
-  </section>
+    <section id="contact" class="contact">
+        <h3>Get In Touch</h3>
+        <div class="socials">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:info@jane4.me" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+    </section>
 
-  <!-- categories (two per row on mobile) -->
-  <section id="categories" class="categories">
-    <h2>Product Categories</h2>
+    <footer class="site-footer">
+        &copy; 2025 JANE 4. All rights reserved.
+    </footer>
 
-    <div class="category-grid">
-      <a class="category-card" href="hoodies.html">
-        <img src="images/hoodie.jpg" alt="Hoodies">
-        <div class="cat-title">Hoodies</div>
-      </a>
+    <script src="script.js"></script>
 
-      <a class="category-card" href="tshirts.html">
-        <img src="images/tshirt.jpg" alt="T-Shirts">
-        <div class="cat-title">T-Shirts</div>
-      </a>
-
-      <a class="category-card" href="pants.html">
-        <img src="images/pants.jpg" alt="Pants">
-        <div class="cat-title">Pants</div>
-      </a>
-
-      <a class="category-card" href="caps.html">
-        <img src="images/cap.jpg" alt="Caps">
-        <div class="cat-title">Caps</div>
-      </a>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="about">
-    <h3>About Us</h3>
-    <p>Jane4 is a modern streetwear brand creating minimal, durable pieces for everyday style.</p>
-  </section>
-
-  <!-- Contact / Social -->
-  <section id="contact" class="contact">
-    <h3>Contact</h3>
-    <div class="socials">
-      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:info@jane4.me" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    </div>
-  </section>
-
-  <footer class="site-footer">&copy; 2025 JANE 4</footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
