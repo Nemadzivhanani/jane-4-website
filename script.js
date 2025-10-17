@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Add initial state and event listener for scroll
     handleScroll();
     window.addEventListener('scroll', handleScroll);
 
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileNav.style.display = isMenuOpen ? 'none' : 'flex';
     };
 
-    // Add event listener for hamburger button
     hamburgerBtn.addEventListener('click', toggleMenu);
 
     // Close menu when a link is clicked
@@ -33,4 +31,45 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileNav.style.display = 'none';
         });
     });
+
+    // --- SINGLE PRODUCT PAGE LOGIC ---
+    if (document.querySelector('.product-detail-page')) {
+        
+        const mainImage = document.getElementById('main-product-image');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function() {
+                mainImage.src = this.src;
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        const optionContainers = document.querySelectorAll('.option-buttons');
+        optionContainers.forEach(container => {
+            container.addEventListener('click', function(e) {
+                if (e.target.classList.contains('option-btn')) {
+                    container.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('active'));
+                    e.target.classList.add('active');
+                }
+            });
+        });
+
+        const decreaseBtn = document.getElementById('decrease-qty');
+        const increaseBtn = document.getElementById('increase-qty');
+        const quantityValue = document.getElementById('quantity-value');
+
+        decreaseBtn.addEventListener('click', () => {
+            let currentQty = parseInt(quantityValue.textContent);
+            if (currentQty > 1) {
+                quantityValue.textContent = currentQty - 1;
+            }
+        });
+
+        increaseBtn.addEventListener('click', () => {
+            let currentQty = parseInt(quantityValue.textContent);
+            quantityValue.textContent = currentQty + 1;
+        });
+    }
 });
