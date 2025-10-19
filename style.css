@@ -67,7 +67,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helve
 /* UPDATED: Product Name Font */
 .product-name { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; margin-bottom: 10px; }
 /* UPDATED: Product Price Font */
-.product-price { font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
+.product-price { font-size: 0.7rem; font-weight: 700; margin-bottom: 12px; }
 .product-colors { display: flex; justify-content: center; gap: 8px; margin-top: 8px; margin-bottom: 8px; }
 .color-swatch { width: 20px; height: 20px; border-radius: 50%; border: 1px solid #dddddd; }
 
