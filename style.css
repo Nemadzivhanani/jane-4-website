@@ -494,17 +494,18 @@ body {
 
 /* Make the product name smaller and less bold */
 .product-details .product-name {
-    font-size: 0.85rem; /* Slightly smaller */
-    font-weight: 600;   /* Less bold than before */
-    letter-spacing: 0.5px; /* Adds a bit of space */
+    font-size: 0.8rem; /* Even smaller for a cleaner look */
+    font-weight: 600;
+    letter-spacing: 0.4px; /* Slightly tighter spacing */
     text-transform: uppercase;
+    margin-bottom: 10px; /* More space below the name */
 }
 
 /* Adjust the price font */
 .product-details .product-price {
-    font-size: 0.95rem; /* Make price clear but not overpowering */
-    font-weight: 700;   /* Bold */
-    margin-bottom: 8px; /* Give it space from the colors */
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 /* Minor adjustment to color swatch spacing */
