@@ -487,3 +487,28 @@ body {
         flex: 1;
     }
 }
+
+/* =================================
+   PRODUCT CARD FONT REFINEMENT
+   ================================= */
+
+/* Make the product name smaller and less bold */
+.product-details .product-name {
+    font-size: 0.85rem; /* Slightly smaller */
+    font-weight: 600;   /* Less bold than before */
+    letter-spacing: 0.5px; /* Adds a bit of space */
+    text-transform: uppercase;
+}
+
+/* Adjust the price font */
+.product-details .product-price {
+    font-size: 0.95rem; /* Make price clear but not overpowering */
+    font-weight: 700;   /* Bold */
+    margin-bottom: 8px; /* Give it space from the colors */
+}
+
+/* Minor adjustment to color swatch spacing */
+.product-details .product-colors {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
