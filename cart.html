@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart | JANE 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header id="site-header">
+        <button id="hamburger-btn" class="hamburger" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        <div class="logo">JANE 4</div>
+        <a href="cart.html" class="cart" aria-label="Shopping Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge">0</span>
+        </a>
+    </header>
+
+    <nav id="mobile-nav" class="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tshirts.html" class="nav-link">T-Shirts</a>
+        <a href="hoodies.html" class="nav-link">Hoodies</a>
+        <a href="index.html#about" class="nav-link">About</a>
+    </nav>
+
+    <main class="cart-page">
+        <h1 class="cart-title">YOUR CART</h1>
+        
+        <div id="cart-items-container">
+            </div>
+
+        <div class="cart-summary">
+            <div class="summary-total">
+                <span>TOTAL:</span>
+                <span id="cart-total">R 0.00</span>
+            </div>
+            <button id="whatsapp-checkout-btn" class="buy-button">ORDER ALL ITEMS ON WHATSAPP</button>
+            <a href="tshirts.html" class="continue-shopping-link">Continue Shopping</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">&copy; 2025 JANE 4. All rights reserved.</footer>
+    <script src="script.js"></script>
+</body>
+</html>
