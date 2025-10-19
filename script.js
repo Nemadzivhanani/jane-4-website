@@ -72,4 +72,29 @@ document.addEventListener('DOMContentLoaded', () => {
             quantityValue.textContent = currentQty + 1;
         });
     }
+
+    // --- WHATSAPP ORDER BUTTON LOGIC ---
+    if (document.getElementById('order-btn')) {
+        const orderBtn = document.getElementById('order-btn');
+
+        orderBtn.addEventListener('click', function() {
+            // Your WhatsApp Number
+            const yourPhoneNumber = '27787465300';
+
+            // Get all the selected details
+            const productName = document.querySelector('.product-title').textContent.trim();
+            const selectedColor = document.querySelector('#color-options .option-btn.active').textContent.trim();
+            const selectedSize = document.querySelector('#size-options .option-btn.active').textContent.trim();
+            const quantity = document.getElementById('quantity-value').textContent.trim();
+
+            // Create the pre-filled message
+            const message = `Hi JANE 4, I'd like to place an order:\n\n*Product:* ${productName}\n*Colour:* ${selectedColor}\n*Size:* ${selectedSize}\n*Quantity:* ${quantity}\n\nThank you!`;
+
+            // Create the final WhatsApp URL
+            const whatsappURL = `https://wa.me/${yourPhoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Open WhatsApp in a new tab
+            window.open(whatsappURL, '_blank');
+        });
+    }
 });
