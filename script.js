@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileNav = document.getElementById('mobile-nav');
 
+    // This logic only applies to the homepage header
     if (header && !header.classList.contains('header-solid')) {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -40,25 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cartBadge) {
                 cartBadge.textContent = cart.length;
             }
-        } catch (e) { console.error("Could not parse cart from localStorage", e); }
+        } catch (e) {
+            console.error("Could not parse cart from localStorage", e);
+        }
     }
-    updateCartIcon();
+    updateCartIcon(); // Update on every page load
 
     // --- SINGLE PRODUCT PAGE LOGIC ---
     if (document.querySelector('.product-detail-page')) {
         
-        // Image Gallery
         const mainImage = document.getElementById('main-product-image');
         const thumbnails = document.querySelectorAll('.thumbnail');
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', function() {
-                mainImage.src = this.src;
-                thumbnails.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
+        if (mainImage && thumbnails) {
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    mainImage.src = this.src;
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
             });
-        });
+        }
 
-        // Option Button Selection
         const optionContainers = document.querySelectorAll('.option-buttons');
         optionContainers.forEach(container => {
             container.addEventListener('click', function(e) {
@@ -69,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Quantity Selector
         const decreaseBtn = document.getElementById('decrease-qty');
         const increaseBtn = document.getElementById('increase-qty');
         const quantityValue = document.getElementById('quantity-value');
@@ -83,21 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 quantityValue.textContent = currentQty + 1;
             });
         }
-
-        // NEW: Accordion Logic
+        
         const accordionItems = document.querySelectorAll('.accordion-item');
         accordionItems.forEach(item => {
             const header = item.querySelector('.accordion-header');
             header.addEventListener('click', () => {
                 const content = item.querySelector('.accordion-content');
                 const isActive = header.classList.contains('active');
-
-                // Close other accordions when one is opened
                 accordionItems.forEach(otherItem => {
                     otherItem.querySelector('.accordion-header').classList.remove('active');
                     otherItem.querySelector('.accordion-content').style.maxHeight = null;
                 });
-
                 if (!isActive) {
                     header.classList.add('active');
                     content.style.maxHeight = content.scrollHeight + "px";
@@ -105,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // "ORDER ON WHATSAPP" (Single Item)
         const orderBtn = document.getElementById('order-btn');
         if (orderBtn) {
             orderBtn.addEventListener('click', function() {
@@ -120,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
-        // UPDATED: "ADD TO CART" with Toast Notification
         const addToCartBtn = document.getElementById('add-to-cart-btn');
         if (addToCartBtn) {
             addToCartBtn.addEventListener('click', function() {
@@ -138,19 +134,85 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('jane4_cart', JSON.stringify(cart));
                 updateCartIcon();
                 
-                // Show custom toast notification instead of alert
                 const toast = document.getElementById('toast-notification');
                 toast.textContent = `✅ "${product.name}" was added to your cart.`;
                 toast.classList.add('show');
                 setTimeout(() => {
                     toast.classList.remove('show');
-                }, 3000); // Hide after 3 seconds
+                }, 3000);
             });
         }
     }
 
     // --- CART PAGE LOGIC ---
     if (document.querySelector('.cart-page')) {
-        // ... (The rest of the cart logic remains the same)
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const cartTotalEl = document.getElementById('cart-total');
+        let cart = JSON.parse(localStorage.getItem('jane4_cart')) || [];
+
+        function renderCart() {
+            if (!cartItemsContainer) return; // Stop if container not found
+            cartItemsContainer.innerHTML = '';
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `<p id="cart-empty-message">Your cart is empty.</p>`;
+                if(cartTotalEl) cartTotalEl.textContent = 'R 0.00';
+                return;
+            }
+
+            let total = 0;
+            cart.forEach(item => {
+                const itemEl = document.createElement('div');
+                itemEl.classList.add('cart-item');
+                itemEl.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <p class="cart-item-name">${item.name}</p>
+                        <p class="cart-item-attributes">Size: ${item.size} | Colour: ${item.color}</p>
+                        <p class="cart-item-price">${item.price} (Qty: ${item.quantity})</p>
+                    </div>
+                    <div class="cart-item-actions">
+                        <button class="remove-item-btn" data-id="${item.id}">Remove</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemEl);
+                
+                const priceNumber = parseFloat(item.price.replace('R ', ''));
+                if (!isNaN(priceNumber)) { total += priceNumber * item.quantity; }
+            });
+            if(cartTotalEl) cartTotalEl.textContent = `R ${total.toFixed(2)}`;
+        }
+
+        cartItemsContainer.addEventListener('click', function(e) {
+            if (e.target.classList.contains('remove-item-btn')) {
+                const itemId = parseInt(e.target.getAttribute('data-id'));
+                cart = cart.filter(item => item.id !== itemId);
+                localStorage.setItem('jane4_cart', JSON.stringify(cart));
+                renderCart();
+                updateCartIcon();
+            }
+        });
+
+        const whatsappCheckoutBtn = document.getElementById('whatsapp-checkout-btn');
+        if (whatsappCheckoutBtn) {
+            whatsappCheckoutBtn.addEventListener('click', function() {
+                if (cart.length === 0) { alert('Your cart is empty!'); return; }
+                const yourPhoneNumber = '27787465300';
+                let message = "Hi JANE 4, I'd like to order the following items:\n\n";
+                cart.forEach(item => {
+                    message += `*Product:* ${item.name}\n`;
+                    message += `*Colour:* ${item.color}\n`;
+                    message += `*Size:* ${item.size}\n`;
+                    message += `*Quantity:* ${item.quantity}\n\n`;
+                });
+                message += `*Total:* ${cartTotalEl.textContent}\n\nThank you!`;
+                
+                const whatsappURL = `https://wa.me/${yourPhoneNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappURL, '_blank');
+            });
+        }
+        
+        renderCart();
     }
 });
