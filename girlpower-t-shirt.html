@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GirlPower T Shirt | JANE 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="site-header" class="header-solid">
+        <button id="hamburger-btn" class="hamburger" aria-label="Open Menu"><i class="fas fa-bars"></i></button>
+        <div class="logo">JANE 4</div>
+        <a href="cart.html" class="cart" aria-label="Shopping Cart"><i class="fas fa-shopping-bag"></i><span class="cart-badge">0</span></a>
+    </header>
+
+    <nav id="mobile-nav" class="mobile-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="tshirts.html" class="nav-link">T-Shirts</a>
+        <a href="index.html#about" class="nav-link">About</a>
+    </nav>
+
+    <main class="product-detail-page">
+        <div class="back-link-container">
+            <a href="tshirts.html" class="back-link">&larr; Back to T-Shirts</a>
+        </div>
+
+        <div class="product-gallery">
+            <img id="main-product-image" src="images/girlpower-t-shirt-1.jpg" alt="GirlPower T shirt">
+            <div class="thumbnail-container">
+                <img src="images/girlpower-t-shirt-1.jpg" alt="Thumbnail 1" class="thumbnail active">
+                <img src="images/girlpower-t-shirt-2.jpg" alt="Thumbnail 2" class="thumbnail">
+            </div>
+        </div>
+
+        <div class="product-details-container">
+            <h1 class="product-title">GIRLPOWER T SHIRT (220GSM)</h1>
+            <p class="product-price">R 279.00</p>
+            
+            <div class="product-options">
+                <label>Colour:</label>
+                <div class="option-buttons" id="color-options">
+                    <button class="option-btn active">Black</button>
+                    <button class="option-btn">White</button>
+                </div>
+            </div>
+
+            <div class="product-options">
+                <label>Size:</label>
+                <div class="option-buttons" id="size-options">
+                    <button class="option-btn">XS</button>
+                    <button class="option-btn">S</button>
+                    <button class="option-btn active">M</button>
+                    <button class="option-btn">L</button>
+                    <button class="option-btn">XL</button>
+                    <button class="option-btn">2XL</button>
+                </div>
+            </div>
+
+            <div class="product-options">
+                <label>Quantity:</label>
+                <div class="quantity-selector">
+                    <button id="decrease-qty">-</button>
+                    <span id="quantity-value">1</span>
+                    <button id="increase-qty">+</button>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="add-to-cart-btn" class="cart-button">ADD TO CART</button>
+                <button id="order-btn" class="buy-button">ORDER ON WHATSAPP</button>
+            </div>
+            
+            <p class="stock-status">In Stock</p>
+            <p class="delivery-info">Delivery takes 2-5 business days.</p>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Description</button>
+                    <div class="accordion-content">
+                        <p>The Jane 4 Graphic Tee brings bold streetwear energy to your style. Built from 220gsm premium cotton, it’s designed for comfort and durability, while our high-quality DTF prints make sure your graphics stay sharp wash after wash. A statement piece for those who rep the culture.</p>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Fit & Sizing</button>
+                    <div class="accordion-content">
+                        <p><strong>Fit:</strong> Regular Fit<br><a href="#" class="size-chart-link">View Size Chart</a></p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Fabric & Care</button>
+                    <div class="accordion-content">
+                        <p><strong>Fabric:</strong> 100% Cotton (220gsm)<br><strong>Care:</strong> Machine wash cold. Do not tumble dry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">&copy; 2025 JANE 4. All rights reserved.</footer>
+    <div id="toast-notification" class="toast-notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
