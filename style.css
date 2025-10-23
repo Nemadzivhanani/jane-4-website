@@ -700,3 +700,54 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* =================================
+   PRODUCT CARD HEIGHT & ALIGNMENT FIX
+   ================================= */
+
+/* Apply flexbox to the grid container */
+.product-grid {
+    display: grid; /* Keep using grid for layout */
+    /* ... existing grid styles ... */
+    /* Add alignment for items in case grid rows are uneven */
+    align-items: stretch;
+}
+
+/* Ensure card itself stretches and uses flexbox internally */
+.product-card {
+    display: flex; /* Use flexbox inside the card */
+    flex-direction: column; /* Stack image and details vertically */
+    justify-content: space-between; /* Pushes details down */
+    /* ... existing card styles ... */
+    height: 100%; /* Make card take full height of grid cell */
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure content inside details fills space */
+    flex-grow: 1; /* Allows details section to grow */
+    padding: 15px; /* Keep padding */
+}
+
+/* Ensure image container behaves predictably */
+.product-image-container {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Force square aspect ratio for images */
+    overflow: hidden; /* Hide parts of image that overflow */
+}
+
+.product-image-container img {
+    width: 100%;
+    height: 100%; /* Make image fill container */
+    object-fit: cover; /* Cover the area, cropping if needed */
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+/* Adjust text alignment if needed */
+.product-name, .product-price {
+    text-align: center;
+}
