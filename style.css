@@ -10,11 +10,11 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Use Inter first */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background: #ffffff;
     color: #111111;
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
@@ -108,7 +108,7 @@ body {
 /* --- Hero Section --- */
 .hero {
     height: 100vh;
-    background-image: url('images/hero.jpg');
+    background-image: url('images/hero.jpeg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -212,7 +212,7 @@ body {
     height: 150px;
     object-fit: cover;
     display: block;
-    filter: none; /* Ensure color */
+    filter: none;
 }
 
 .cat-title {
@@ -277,6 +277,7 @@ body {
     gap: 15px;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch; /* Fix for unequal card heights */
 }
 
 .product-card {
@@ -287,6 +288,10 @@ body {
     border-radius: 4px;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .product-card:hover {
@@ -296,14 +301,18 @@ body {
 .product-image-container {
     position: relative;
     display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Force square aspect ratio */
+    overflow: hidden;
 }
 
 .product-image-container img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    background-color: #f5f5f5;
     transition: opacity 0.4s ease;
-    filter: none; /* Ensure color */
+    filter: none;
 }
 
 .product-img-hover {
@@ -322,11 +331,14 @@ body {
 }
 
 .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
     padding: 15px;
     text-align: center;
 }
 
-/* UPDATED: Refined Product Card Fonts */
 .product-details .product-name {
     font-size: 0.8rem;
     font-weight: 500;
@@ -336,7 +348,6 @@ body {
     margin-bottom: 6px;
 }
 
-/* UPDATED: Price Font Size and Weight */
 .product-details .product-price {
     font-size: 0.9rem;
     font-weight: 600;
@@ -383,7 +394,7 @@ body {
     width: 100%;
     border-radius: 4px;
     border: 1px solid #eee;
-    filter: none; /* Ensure color */
+    filter: none;
 }
 
 .thumbnail-container {
@@ -400,33 +411,39 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: border-color 0.3s ease;
-    filter: none; /* Ensure color */
+    filter: none;
 }
 
 .thumbnail.active, .thumbnail:hover {
     border-color: #000000;
 }
 
-.product-title {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+.product-detail-page .product-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
 }
 
-.product-details-container .product-price { /* Target price only on detail page */
-    font-size: 1.4rem; /* Keep this price larger */
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #111111; /* Keep it black */
-} 
+.product-detail-page .product-details-container .product-price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.product-detail-page .product-options label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555555;
+    margin-bottom: 12px;
+}
 
 .product-options {
     margin-bottom: 20px;
-}
-
-.product-options label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
 }
 
 .option-buttons {
@@ -517,7 +534,6 @@ body {
     color: #555555;
 }
 
-/* Accordion Styles */
 .accordion {
     margin-top: 30px;
     border-top: 1px solid #eee;
@@ -537,7 +553,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     position: relative;
-    color: #111; /* Ensure text is visible */
+    color: #111;
 }
 
 .accordion-header::after {
@@ -555,7 +571,7 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    color: #333; /* Ensure text is visible */
+    color: #333;
 }
 
 .accordion-content p {
@@ -699,55 +715,4 @@ body {
     .action-buttons {
         grid-template-columns: 1fr 1fr;
     }
-}
-
-/* =================================
-   PRODUCT CARD HEIGHT & ALIGNMENT FIX
-   ================================= */
-
-/* Apply flexbox to the grid container */
-.product-grid {
-    display: grid; /* Keep using grid for layout */
-    /* ... existing grid styles ... */
-    /* Add alignment for items in case grid rows are uneven */
-    align-items: stretch;
-}
-
-/* Ensure card itself stretches and uses flexbox internally */
-.product-card {
-    display: flex; /* Use flexbox inside the card */
-    flex-direction: column; /* Stack image and details vertically */
-    justify-content: space-between; /* Pushes details down */
-    /* ... existing card styles ... */
-    height: 100%; /* Make card take full height of grid cell */
-}
-
-.product-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Ensure content inside details fills space */
-    flex-grow: 1; /* Allows details section to grow */
-    padding: 15px; /* Keep padding */
-}
-
-/* Ensure image container behaves predictably */
-.product-image-container {
-    position: relative;
-    display: block;
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Force square aspect ratio for images */
-    overflow: hidden; /* Hide parts of image that overflow */
-}
-
-.product-image-container img {
-    width: 100%;
-    height: 100%; /* Make image fill container */
-    object-fit: cover; /* Cover the area, cropping if needed */
-    display: block;
-    transition: opacity 0.4s ease;
-}
-
-/* Adjust text alignment if needed */
-.product-name, .product-price {
-    text-align: center;
 }
